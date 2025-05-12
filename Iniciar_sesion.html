@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>PRODUCTOS</title>
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Agrega Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <header class="header-fijo">
+      <nav class="navegacion-contenedor">
+        <!-- Logo centrado -->
+        <div class="logo-contenedor">
+          <a href="index.html" class="logo-marca">NB</a>
+        </div>
+  
+        <!-- Menú principal con categorías -->
+        <ul class="menu-principal">
+          <li><a href="Inicio.html">INICIO</a></li>
+          <li class="menu-desplegable">
+            PRODUCTOS <i class="fas fa-chevron-down"></i></a>
+            <ul class="submenu">
+              <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
+              <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+              <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
+              <li><a href="kits.html">Kits</a></li>
+            </ul>
+          </li>
+  
+          <li><a href="blogs.html">BLOG</a></li>
+        </ul>
+  
+        <!-- Buscador de productos descriptivo y accesible -->
+      <div class="buscador">
+        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
+          <label for="busqueda" class="visually-hidden"></label>
+          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
+          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
+        </form>
+      </div>
+  
+        <!-- Área de usuario y carrito -->
+        <div class="acceso-usuario">
+          <a href="Iniciar_sesion.html" class="icono-usuario" title="Mi cuenta">
+            <i class="fas fa-user"></i>
+          </a>
+          <a href="carrito.html" class="icono-carrito" title="Carrito de compras">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="contador-carrito">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+<body>
+    
+  <header class="franja-superior">
+    <div style="margin-TOP: 20px;" class="logo">INICIA DE SESIÓN</div>
+  </header>
+  
+  <main class="FONDO_REGISTRO">
+    <img src="INICIO_SESION.png" alt="INICIO_SESION" width="298" height="auto">
+    <div class="formulario">
+        <div class="campo">
+          <h2>USUARIO:</h2>
+          <input type="text" placeholder="Escribe tu nombre">
+        </div>
+    
+        <div class="campo">
+          <h2>CONTRASEÑA:</h2>
+          <input type="text" placeholder="Escribe tu apellido">
+        </div>
+    
+        <div class="campo">
+            <a href=""  class="boton">LOGIN</a>
+        </div>
+    </div>
+
+
+
+  </main>
+
+</body>
+</html>

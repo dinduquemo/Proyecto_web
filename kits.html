@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kits de Cuidado Capilar - Natural Beauty</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<head>
+  <meta charset="UTF-8">
+  <title>PRODUCTOS</title>
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Agrega Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <header class="header-fijo">
+    <nav class="navegacion-contenedor">
+      <!-- Logo centrado -->
+      <div class="logo-contenedor">
+        <a href="index.html" class="logo-marca">NB</a>
+      </div>
+
+      <!-- Menú principal con categorías -->
+      <ul class="menu-principal">
+        <li><a href="Inicio.html">INICIO</a></li>
+        <li class="menu-desplegable">
+          PRODUCTOS <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
+            <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+            <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
+            <li><a href="kits.html">Kits</a></li>
+          </ul>
+        </li>
+
+        <li><a href="blogs.html">BLOG</a></li>
+      </ul>
+      
+      <!-- Buscador de productos descriptivo y accesible -->
+      <div class="buscador">
+        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
+          <label for="busqueda" class="visually-hidden"></label>
+          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
+          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
+        </form>
+      </div>
+
+      <!-- Área de usuario y carrito -->
+      <div class="acceso-usuario">
+        <a href="Iniciar_sesion.html" class="icono-usuario" title="Mi cuenta">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="carrito.html" class="icono-carrito" title="Carrito de compras">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="contador-carrito">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+<body>
+  
+  <header class="encabezado-kits">
+    <div style="margin-TOP: 20px;" class="logo">KITS DE CUIDADO CAPILAR</div>
+    <p>Encuentra el kit ideal para tu tipo de cabello</p>
+  </header>
+
+  <main class="seccion-kits">
+
+    <section class="kit">
+      <img src="Kit1.png" alt="Kit Hidratación Profunda">
+      <div class="kit-info">
+        <h2>Kit Hidratación Profunda</h2>
+        <p>Incluye shampoo, acondicionador y mascarilla con aceite de argán. Ideal para cabellos secos o con daño químico.</p>
+        <p><strong>Precio:</strong> $55.000 COP</p>
+        <button class="boton">
+            <a href="registro.html"  class="boton">Comprar ahora</a>
+        </button>
+      </div>
+    </section>
+
+    <section class="kit">
+      <img src="kit2.png" alt="Kit Fortalecimiento Natural">
+      <div class="kit-info">
+        <h2>Kit Fortalecimiento Natural</h2>
+        <p>Combinación de ingredientes naturales como romero, jengibre y biotina. Ayuda a reducir la caída.</p>
+        <p><strong>Precio:</strong> $63.000 COP</p>
+        <button class="boton">
+            <a href="registro.html"  class="boton">Comprar ahora</a>
+        </button>
+      </div>
+    </section>
+
+    <section class="kit">
+      <img src="Kit3.webp" alt="Kit Antifrizz Control">
+      <div class="kit-info">
+        <h2>Kit Antifrizz Control</h2>
+        <p>Perfecto para cabellos rebeldes o rizados. Incluye crema de peinar, gel sin alcohol y sérum sellador.</p>
+        <p><strong>Precio:</strong> $48.000 COP</p>
+        <button class="boton">
+            <a href="registro.html"  class="boton">Comprar ahora</a>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Natural Beauty | Cuidado Capilar</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,726 @@
+/@font-face {
+  font-family: 'TT Commons Pro Expanded';
+  src: url('fonts/TTCommonsProExpanded-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'TT Commons Pro Expanded', sans-serif;
+  background-color: #ebebeb;
+}
+
+
+header {
+background-color: #ebebeb;
+padding: 20px;
+text-align: center;
+}
+
+/* Estilos para centrar el menú */
+nav {
+  display: flex;
+  justify-content: center;     /* Centra horizontalmente todo el nav */
+  align-items: center;         /* Alinea verticalmente */
+  gap: 60px;                   /* Espacio entre secciones */
+  padding: 20px;
+  background-color: #ebebeb;     /* Puedes cambiar el color si deseas */
+
+
+}
+
+/* Estilos generales para las listas */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+
+}
+
+/* Enlaces dentro del nav */
+nav a {
+  text-decoration: none;
+  color: #322203;
+  font-weight: 10;
+
+}
+
+/* Logo centrado visualmente */
+.logo {
+  font-size: 28px;
+  font-weight: 10;
+  font-family: 'Hatton', serif;
+  color: #322203;
+}
+
+.hero {
+  background-image: url('inicio.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 79vh;     /* alto del contenedor */
+}
+
+.overlay {
+  background-color: rgba(140, 110, 74, 0.2);
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(1px);
+  border-radius: 200px;
+}
+
+.overlay h1 {
+  font-family: 'Hatton', serif;
+  font-size: 2.5rem;
+  font-weight: 1;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.overlay p {
+  font-weight: 10;
+  color: white;
+  margin-bottom: 2rem;
+
+}
+
+.boton {
+
+  background-color: #ebebeb;
+  color: #322203;
+  border: none;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  font-size: 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 7;
+}
+.boton:hover {
+  background-color: #ebebeb;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+/* Franja de fondo gris claro detrás del título */
+.franja-superior {
+  background-color: #ebebeb;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Título en mayúsculas, centrado */
+.titulo-productos {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+/* Fondo del resto del contenido */
+.contenido-principal {
+  background-color: #e7d7c9;
+  height: 100vh;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #322203;
+}
+
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px 10px;
+  background-color: #e7d7C9;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  text-align: center;
+  max-width: 350px;
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.tarjeta h2 {
+  font-size: 1.5rem;
+  margin: 20px 0 5px;
+  font-family: 'Hatton', serif; /* si tienes Hatton */
+  font-weight: 10;
+  color: #322203;
+}
+
+.tarjeta p {
+  font-size: 1rem;
+  color: #322203;
+  font-family: 'TT Commons Pro Expanded', sans-serif;
+}
+
+
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.imagen img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.texto {
+  max-width: 400px;
+}
+
+.texto h1 {
+  margin-bottom: 5px; /* Espacio debajo del título */
+  margin-top: 5px;     /* Espacio arriba del título */
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: 'Hatton', serif;
+  font-weight: 10;
+  color: #322203;
+}
+
+.texto p {
+  font-size: 1.2rem;
+  color: #322203;
+  font-family: 'Hatton', serif;
+  font-weight: 10;
+}
+.seccion-doble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.lado-izquierdo,
+.lado-derecho {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.imagen-central img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px; /* Espacio debajo del título */
+  margin-top: 5px;     /* Espacio arriba del título */
+  margin-bottom: 5px;
+  color: #322203;
+  font-family: 'Hatton', serif;
+  font-weight: 10;
+}
+
+p {
+  font-size: 1rem;
+  color: #322203;
+  font-family: 'TT Commons Pro Expanded', sans-serif;
+  font-weight: 10;
+}
+
+.margen-color {
+  background-color: #322203; /* el "color de margen visible" */
+  display: inline-block; 
+  padding: 0.7px; /* espacio visible alrededor del botón */
+}
+
+.boton_con_marco {
+  
+  background-color: #ebebeb;
+  color: #322203;
+  border: none;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  font-size: 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+  
+}
+
+.contenido-principal {
+  background-color: #ebebeb;
+  height: 100vh;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #322203;
+}
+
+.galeria2 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px 10px;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+}
+.SOBRENOSOTROS{
+  background-color: #e7d7c9;
+}
+.franja-superior_SOBRENOSOTROS{
+  background-color: #e7d7c9;
+  padding: 20px 0;
+  text-align: center;
+}
+.seccion-destacada {
+  display: flex;
+  height: 100vh;
+}
+
+/* Columna izquierda */
+.izquierda {
+  flex: 1;
+  background-image: url('Fortaleza_izquierda.png'); /* tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-texto {
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2); /* opcional para visibilidad */
+  padding: 2rem;
+}
+
+.contenido-texto h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  padding: 1rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.contenido-texto p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 10;
+  font-family: 'TT Commons Pro Expanded', sans-serif;
+  color: white;
+}
+
+/* Botón */
+/* .boton {
+  background-color: #ebebeb;
+  color: #322203;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+} */
+
+/* Columna derecha */
+.derecha {
+  flex: 1;
+  background-image: url('Fortaleza_derecha.png'); /* tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;            /* Centrado vertical completo */
+  padding: 4rem 1rem;
+  background-color: #ebebeb;    /* Fondo opcional */
+  text-align: center;
+}
+
+.contenedor-forma {
+  background-color: #e0e1e6;
+  width: 60%;
+  padding: 5rem 0.5rem;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-forma h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #322203;
+  font-weight: normal;
+}
+
+.contenedor-forma p {
+  font-size: 1rem;
+  margin: 2rem 0;
+}
+
+.contenedor-forma a {
+  color: #322203;
+  text-decoration: none;
+  font-style: italic;
+}
+ .contacto footer {
+  background-color: #e0e1e6;
+  padding: 1rem 1rem;
+  margin-top: 2rem; 
+}
+
+.footer {
+  background-color: #e0e1e6;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+
+}
+
+
+.redes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  gap: 1rem;
+}
+
+/* ---------------------------BLOGS----------------- */
+
+ 
+.contenedor-blogs {
+  /* padding: 3rem 2rem;
+  max-width: 900px; */
+  /* margin: auto; */
+  margin-top: 10px; 
+  background-color: #e7d7C9;
+  /* padding: 3rem 2rem;
+  margin-bottom: 2rem; */
+
+}
+
+.blog {
+  background-color: #e0e1e6;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid #e0e1e6;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+
+}
+
+.blog h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog p {
+  font-size: 1rem;
+  color: #322203;
+}
+
+footer {
+  background-color: #e7d7c9;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  /* background-image: url("SOL.png") */
+}
+
+
+.imagen-lateral {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.imagen-lateral img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* ----------------KITS------------- */
+
+
+.encabezado-kits {
+  background-color: #e7d7C9;
+  text-align: center;
+  padding: 2rem;
+}
+
+.encabezado-kits h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.seccion-kits {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.kit {
+  background-color: #e7d7c9;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.kit img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.kit-info h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+/* --------------REGISTRO ----------------- */
+.FONDO_REGISTRO {
+  background-image: url('Fondo_de_Registro.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 79vh;     /* alto del contenedor */
+}
+
+
+.formulario {
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 5rem;
+  border-radius: 10px;
+}
+
+.campo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.campo h2 {
+
+  font-size: 1.5rem;
+  margin-bottom: 5px; /* Espacio debajo del título */
+  margin-top: 5px;     /* Espacio arriba del título */
+  margin-bottom: 5px;
+  color: #322203;
+  font-family: 'Hatton', serif;
+  font-weight: 10;
+}
+
+.campo input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+
+.mensaje-login {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 20px;
+  color: #322203;
+  font-family: 'Hatton', serif;
+  font-weight: 3;
+}
+
+.mensaje-login a {
+  color: #4e2d04;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.mensaje-login a:hover {
+  text-decoration: underline;
+}
+.logo-derecha {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.logo-derecha img {
+  width: 40px; /* ajusta el tamaño del logo */
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.logo-derecha:hover img {
+  transform: scale(0.7); /* efecto al pasar el mouse */
+}
+/* Barra de navegación fija */
+.header-fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ebebeb;
+  box-shadow: 0 2px 10px rgba(50, 34, 3, 0.1);
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.navegacion-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Menú desplegable */
+.menu-desplegable:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #e7d7c9;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(50, 34, 3, 0.1);
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+/* Buscador */
+.buscador input {
+  padding: 8px 15px;
+  border: 1px solid #d1c0b0;
+  border-radius: 20px;
+  width: 200px;
+}
+
+/* Carrito */
+.contador-carrito {
+  background-color: #e7d7c9;
+  color: #322203;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+body {
+  padding-top: 70px;
+}
+/* Estilos para uniformizar las imágenes de productos */
+.tarjeta {
+  width: 300px; /* Ancho fijo para uniformidad */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegura misma altura */
+  position: relative; /* Necesario para los badges */
+  margin: 15px;
+  background-color: white; /* Fondo uniforme */
+  border-radius: 10px;
+  overflow: hidden; /* Para bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 250px; /* Altura fija */
+  object-fit: cover; /* Mantiene proporciones */
+  object-position: center; /* Centra la imagen */
+  border-bottom: 1px solid #e7d7c9; /* Línea decorativa */
+}
+
+/* Contenedor de la galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+  background-color: #e7d7c9;
+}
+
+/* Contenedor del contenido de la tarjeta */
+.contenido-tarjeta {
+  padding: 20px;
+  flex-grow: 1; /* Para que ocupe espacio disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Asegurar que los botones queden alineados al final */
+.botones-tarjeta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.boton-vaciar {
+  background-color: transparent;
+  color: #b67f7f;
+  border: 1px solid #b67f7f;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.boton-vaciar:hover {
+  background-color: #b67f7f;
+  color: white;
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PRODUCTOS</title>
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Agrega Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <header class="header-fijo">
+    <nav class="navegacion-contenedor">
+      <!-- Logo centrado -->
+      <div class="logo-contenedor">
+        <a href="index.html" class="logo-marca">NB</a>
+      </div>
+
+      <!-- Menú principal con categorías -->
+      <ul class="menu-principal">
+        <li><a href="Inicio.html">INICIO</a></li>
+        <li class="menu-desplegable">
+          <a href="productos.html">PRODUCTOS <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
+            <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+            <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
+            <li><a href="kits.html">Kits</a></li>
+          </ul>
+        </li>
+
+        <li><a href="blogs.html">BLOG</a></li>
+      </ul>
+
+      <!-- Buscador de productos -->
+      <div class="buscador">
+        <form action="productos.html" method="get">
+          <input type="text" name="q" placeholder="Buscar productos..." aria-label="Buscar productos">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Área de usuario y carrito -->
+      <div class="acceso-usuario">
+        <a href="Iniciar_sesion.html" class="icono-usuario" title="Mi cuenta">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="carrito.html" class="icono-carrito" title="Carrito de compras">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="contador-carrito">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Natural Beauty</title>
+  <style>
+    :root {
+      --primary-color: #b67f7f; /* Verde natural para la marca */
+      --secondary-color: #b67f7f; /* Beige claro */
+      --accent-color: #c57979; /* Coral suave */
+      --dark-color: #ebebeb /* Verde oscuro */
+      --light-color: #f9f5f0; /* Beige muy claro */
+      --text-color: #333333;
+      --text-light: #777777;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--light-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+    }
+    
+    /* Barra de navegación (debes incluir tu estilo actual) */
+    nav {
+      background-color: var(--primary-color);
+      padding: 15px 0;
+      color: white;
+    }
+    
+    .contenido-carrito {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .items-carrito {
+      flex: 2;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 25px;
+      min-height: 300px;
+    }
+    
+    .resumen-compra {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 25px;
+      height: fit-content;
+    }
+    
+    .resumen-compra h2 {
+      color: var(--dark-color);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .resumen-detalle p {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    .resumen-detalle .total {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: var(--dark-color);
+      margin: 25px 0;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .boton-comprar {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+      margin-bottom: 20px;
+    }
+    
+    .boton-comprar:hover {
+      background-color: var(--dark-color);
+    }
+    
+    .metodos-pago {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .metodos-pago img {
+      height: 30px;
+      width: auto;
+    }
+    
+    .carrito-vacio {
+      text-align: center;
+      padding: 50px;
+      color: var(--text-light);
+    }
+    
+    .carrito-vacio h3 {
+      margin-bottom: 20px;
+      color: var(--dark-color);
+    }
+    
+    .continuar-compra {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      border: 1px solid var(--primary-color);
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    
+    .continuar-compra:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      .contenido-carrito {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación (igual que index.html) -->
+  <nav>
+    <!-- Tu navegación aquí -->
+  </nav>
+  
+  <main class="contenido-carrito">
+    <section class="items-carrito">
+      <div id="carrito-contenido">
+        <h3>Tu carrito está vacío</h3>
+        <p>Parece que aún no has agregado ningún producto a tu carrito.</p>
+        <a href="#" class="continuar-compra">Continuar comprando</a>
+      </div>
+    </section>
+
+    <aside class="resumen-compra">
+      <h2>Resumen de Compra</h2>
+      <div class="resumen-detalle">
+        <p>Subtotal: <span class="subtotal">$0</span></p>
+        <p>Envío: <span class="envio">$0</span></p>
+        <p class="total">Total: <span>$0</span></p>
+      </div>
+      <button class="boton-comprar">Proceder al pago</button>
+      <button class="boton-vaciar" id="vaciar-carrito">Vaciar carrito</button>
+      <div class="metodos-pago">
+        <img src="visa.png" alt="Visa">
+        <img src="mastercard.png" alt="Mastercard">
+      </div>
+    </aside>
+  </main>
+  <script>
+    const contenedor = document.getElementById('carrito-contenido');
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  
+    if (carrito.length === 0) {
+      contenedor.innerHTML = `
+        <div class="carrito-vacio">
+          <h3>Tu carrito está vacío</h3>
+          <p>Parece que aún no has agregado ningún producto.</p>
+          <a href="productos.html" class="continuar-compra">Continuar comprando</a>
+        </div>
+      `;
+    } else {
+      let html = '<ul style="list-style:none; padding:0">';
+      let subtotal = 0;
+  
+      carrito.forEach(item => {
+        const precio = parseInt(item.precio.replace(/\D/g, ''));
+        subtotal += precio;
+  
+        html += `
+          <li style="margin-bottom:20px; display:flex; gap:15px; align-items:center;">
+            <img src="${item.imagen}" alt="${item.nombre}" style="width:60px; height:auto;">
+            <div>
+              <strong>${item.nombre}</strong><br>
+              <span>${item.precio}</span>
+            </div>
+          </li>
+        `;
+      });
+  
+      html += '</ul>';
+      contenedor.innerHTML = html;
+  
+      // Actualizar resumen de compra
+      document.querySelector('.subtotal').textContent = `$${subtotal.toLocaleString()} COP`;
+      document.querySelector('.envio').textContent = `$0`;
+      document.querySelector('.total span').textContent = `$${subtotal.toLocaleString()} COP`;
+    }
+  </script>
+  <script>
+    const vaciarBtn = document.getElementById('vaciar-carrito');
+    const carritoContenedor = document.getElementById('carrito-contenido');
+  
+    vaciarBtn.addEventListener('click', () => {
+      // Vaciar carrito de localStorage
+      localStorage.removeItem('carrito');
+  
+      // Mostrar mensaje de carrito vacío
+      carritoContenedor.innerHTML = `
+        <div class="carrito-vacio">
+          <h3>Tu carrito está vacío</h3>
+          <p>Parece que aún no has agregado ningún producto.</p>
+          <a href="productos.html" class="continuar-compra">Continuar comprando</a>
+        </div>
+      `;
+  
+      // Reiniciar resumen de compra
+      document.querySelector('.subtotal').textContent = '$0';
+      document.querySelector('.envio').textContent = '$0';
+      document.querySelector('.total span').textContent = '$0';
+    });
+  </script>
+</body>
+</html>
+  

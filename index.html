@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NB - Cuidado Capilar</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=TT+Commons+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Barra de navegación fija -->
+  <header class="header-fijo">
+    <nav class="navegacion-contenedor">
+      <!-- Botón hamburguesa (móvil) -->
+      
+
+      <!-- Logo -->
+      <div class="logo-contenedor">
+        <a href="index.html" class="logo-marca">NB</a>
+      </div>
+
+      <!-- Menú principal -->
+      <ul class="menu-principal">
+        <li><a href="Inicio.html">INICIO</a></li>
+        <li class="menu-desplegable">
+          <a href="#">PRODUCTOS <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
+            <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+            <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
+            <li><a href="kits.html">Kits</a></li>
+          </ul>
+        </li>
+        <li><a href="blogs.html">BLOG</a></li>
+      </ul>
+
+      <!-- Buscador -->
+      <div class="buscador">
+        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
+          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
+          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
+        </form>
+      </div>
+
+      <!-- Usuario y carrito -->
+      <div class="acceso-usuario">
+        <a href="Iniciar_sesion.html" class="icono-usuario" title="Mi cuenta">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="carrito.html" class="icono-carrito" title="Carrito de compras">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="contador-carrito">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Fondo decorativo -->
+  <div class="fondo2"></div>
+
+  <!-- Sección principal -->
+  <main class="hero">
+    <div class="overlay">
+      <h1>Productos de cuidado capilar</h1>
+      <p>Porque cuidar hace parte del amar</p>
+      <a href="productos.html" class="boton">VER MÁS</a>
+    </div>    
+  </main>
+
+  <!-- Script JS -->
+  <script>
+    // Abrir/Cerrar menú móvil
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu-principal').classList.toggle('activo');
+    });
+  </script>
+
+</body>
+</html>
