@@ -34,15 +34,14 @@
         <li><a href="blogs.html">BLOG</a></li>
       </ul>
 
-      <!-- Buscador de productos descriptivo y accesible -->
-      <div class="buscador">
-        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
-          <label for="busqueda" class="visually-hidden"></label>
-          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
-          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
-          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
-        </form>
-      </div>
+
+      <!-- Buscador de productos -->
+<div class="buscador">
+  <form id="formulario-busqueda" role="search" aria-label="Buscador de productos capilares">
+    <input type="text" id="busqueda-input" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+    <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+  </form>
+</div>
 
       <!-- Área de usuario y carrito -->
       <div class="acceso-usuario">
@@ -97,6 +96,44 @@
 
 
   </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const terminoBusqueda = urlParams.get('q');
+
+    if (terminoBusqueda) {
+      const productos = document.querySelectorAll('.tarjeta');
+      const texto = terminoBusqueda.toLowerCase();
+
+      productos.forEach(producto => {
+        const titulo = producto.querySelector('h2')?.textContent.toLowerCase() || '';
+        const descripcion = producto.querySelector('p')?.textContent.toLowerCase() || '';
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+
+    }
+  });
+</script>
+<script>
+  document.getElementById('formulario-busqueda').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const termino = document.getElementById('busqueda-input').value.trim().toLowerCase();
+    const tarjetas = document.querySelectorAll('.tarjeta');
+
+    tarjetas.forEach(tarjeta => {
+      const nombre = tarjeta.querySelector('h2').textContent.toLowerCase();
+      tarjeta.style.display = nombre.includes(termino) ? 'block' : 'none';
+    });
+  });
+</script>
+
+<!-- Al final de TODOS tus .html -->
+<script src="buscador.js"></script>
 
 </body>
 </html>

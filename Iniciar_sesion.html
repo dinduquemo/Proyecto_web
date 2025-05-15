@@ -20,7 +20,7 @@
             PRODUCTOS <i class="fas fa-chevron-down"></i></a>
             <ul class="submenu">
               <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
-              <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+              <li><a href="productos.html?categoria=acondicionador">Acondicionador</a></li>
               <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
               <li><a href="kits.html">Kits</a></li>
             </ul>
@@ -29,13 +29,12 @@
           <li><a href="blogs.html">BLOG</a></li>
         </ul>
   
-        <!-- Buscador de productos descriptivo y accesible -->
+
+      <!-- Buscador de productos -->
       <div class="buscador">
-        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
-          <label for="busqueda" class="visually-hidden"></label>
-          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
+        <form id="formulario-busqueda" role="search" aria-label="Buscador de productos capilares">
+          <input type="text" id="busqueda-input" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
           <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
-          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
         </form>
       </div>
   
@@ -54,7 +53,7 @@
 <body>
     
   <header class="franja-superior">
-    <div style="margin-TOP: 20px;" class="logo">INICIA DE SESIÓN</div>
+    <div style="margin-TOP: 20px;" class="logo">INICIA SESIÓN</div>
   </header>
   
   <main class="FONDO_REGISTRO">
@@ -62,22 +61,48 @@
     <div class="formulario">
         <div class="campo">
           <h2>USUARIO:</h2>
-          <input type="text" placeholder="Escribe tu nombre">
+          <input type="text" placeholder="Escribe tu usuario">
         </div>
     
         <div class="campo">
           <h2>CONTRASEÑA:</h2>
-          <input type="text" placeholder="Escribe tu apellido">
+          <input type="text" placeholder="Escribe tu contraseña">
         </div>
     
         <div class="campo">
             <a href=""  class="boton">LOGIN</a>
         </div>
+        <div class="mensaje-login">
+            ¿Ya tienes cuenta? <a href="registro.html">REGISTRATE</a>
+          </div>
     </div>
 
 
 
   </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const terminoBusqueda = urlParams.get('q');
 
+    if (terminoBusqueda) {
+      const productos = document.querySelectorAll('.tarjeta');
+      const texto = terminoBusqueda.toLowerCase();
+
+      productos.forEach(producto => {
+        const titulo = producto.querySelector('h2')?.textContent.toLowerCase() || '';
+        const descripcion = producto.querySelector('p')?.textContent.toLowerCase() || '';
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+
+    }
+  });
+</script>
+<script src="buscador.js"></script>
 </body>
 </html>

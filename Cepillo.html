@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cepillo - Detalles</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos para la página de detalles */
+    body {
+      font-family: 'TT Commons Pro Expanded', sans-serif;
+      background-color: #f5f0eb;
+      color: #322203;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .contenedor-detalle {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .galeria-imagenes {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .imagen-principal {
+      width: 100%;
+      cursor: zoom-in;
+      transition: transform 0.3s;
+      border-radius: 8px;
+    }
+    
+    .imagen-principal.zoomed {
+      transform: scale(1.8);
+      cursor: zoom-out;
+      position: relative;
+      z-index: 100;
+    }
+    
+    .info-producto {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .titulo-producto {
+      font-family: 'Hatton', serif;
+      font-size: 2.5rem;
+      color: #8c6e4a;
+      margin-bottom: 10px;
+    }
+    
+    .reseña-producto {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .precio-producto {
+      font-size: 1.8rem;
+      color: #8c6e4a;
+      margin: 20px 0;
+    }
+    
+    .oferta-exclusiva {
+      margin: 30px 0;
+    }
+    
+    .tabla-ofertas {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    .tabla-ofertas td {
+      padding: 15px;
+      border-bottom: 1px solid #d1c0b0;
+    }
+    
+    .boton-carrito {
+      background-color: #8c6e4a;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    
+    .boton-carrito:hover {
+      background-color: #6d5639;
+    }
+    
+    .descripcion-producto {
+      margin: 40px 0;
+      line-height: 1.8;
+    }
+    
+    .beneficios-producto {
+      margin: 40px 0;
+    }
+    
+    .beneficios-producto ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .beneficios-producto li {
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+      font-size: 1.1rem;
+    }
+    
+    .beneficios-producto li:before {
+      content: "•";
+      color: #8c6e4a;
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+    }
+    
+    .valoracion-detalle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    
+    .valoracion-detalle:hover {
+      text-decoration: underline;
+    }
+    
+    .estrellas-detalle {
+      color: #ffc107;
+      font-size: 1.2rem;
+    }
+    
+    .header-detalle {
+      background-color: #e7d7c9;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .logo-detalle {
+      font-family: 'Hatton', serif;
+      font-size: 2rem;
+      color: #8c6e4a;
+    }
+    
+    /* Estilos para el modal de comentarios */
+    .modal-comentarios {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    .contenido-modal {
+      background-color: #f5f0eb;
+      margin: 5% auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      position: relative;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .cerrar-modal {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #8c6e4a;
+      cursor: pointer;
+    }
+    
+    .titulo-comentarios {
+      font-family: 'Hatton', serif;
+      color: #8c6e4a;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .resumen-comentarios {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .puntuacion-total {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    
+    .comentario {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .encabezado-comentario {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .estrellas-comentario {
+      color: #ffc107;
+    }
+    
+    .fecha-comentario {
+      color: #8c6e4a;
+      font-size: 0.9rem;
+    }
+    
+    .texto-comentario {
+      line-height: 1.6;
+    }
+    
+    .fuente-comentarios {
+      font-style: italic;
+      margin-top: 30px;
+      text-align: right;
+      color: #8c6e4a;
+    }
+  </style>
+   <header class="header-fijo">
+  <nav class="navegacion-contenedor">
+
+    <!-- Logo centrado -->
+    <div class="logo-contenedor">
+      <a href="index.html" class="logo-marca">NB</a>
+    </div>
+
+    <!-- Menú principal con categorías -->
+    <ul class="menu-principal">
+      <li><a href="Inicio.html">INICIO</a></li>
+      <li class="menu-desplegable">
+        PRODUCTOS <i class="fas fa-chevron-down"></i>
+        <ul class="submenu">
+          <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
+          <li><a href="productos.html?categoria=acondicionador">Acondicionador</a></li>
+          <li><a href="productos.html?categoria=tratamiento">Tratamientos</a></li>
+          <li><a href="productos.html?categoria=combo">Kits</a></li>
+        </ul>
+      </li>
+      <li><a href="blogs.html">BLOG</a></li>
+    </ul>
+
+
+      <!-- Buscador de productos -->
+      <div class="buscador">
+        <form id="formulario-busqueda" role="search" aria-label="Buscador de productos capilares">
+          <input type="text" id="busqueda-input" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+
+
+    <!-- Área de usuario y carrito -->
+    <div class="acceso-usuario">
+      <a href="Iniciar_sesion.html" class="icono-usuario" title="Mi cuenta">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="carrito.html" class="icono-carrito" title="Carrito de compras">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="contador-carrito">0</span>
+      </a>
+    </div>
+
+  </nav>
+</header>
+</head>
+<body>
+  <header class="header-detalle">
+    <div class="logo-detalle">NB</div>
+  </header>
+
+  <div class="contenedor-detalle">
+    <div class="galeria-imagenes">
+      <img id="imagenZoom" src="CEPILLO.png" alt="Cepillo" class="imagen-principal">
+    </div>
+    
+    <div class="info-producto">
+      <h1 class="titulo-producto">Cepillo</h1>
+      <div class="valoracion-detalle" id="btnResenas">
+        <span class="estrellas-detalle">★★★★☆</span>
+        <span class="num-resenas">(5 reseñas)</span>
+      </div>
+
+      <div class="precio-producto">$20.000 COP</div>
+      <p>Desenreda, da brillo y masajea tu cuero cabelludo con cada pasada.</p>
+
+      <button class="boton-carrito">
+        <i class="fas fa-shopping-cart"></i> AÑADIR AL CARRITO
+      </button>
+
+      <div class="descripcion-producto">
+        <p>Este cepillo ha sido diseñado para desenredar el cabello con facilidad, reducir el frizz y estimular el cuero cabelludo en cada pasada.</p>
+        <p>Ideal para todo tipo de cabello, su diseño ergonómico y cerdas suaves permiten un cepillado sin tirones, protegiendo la fibra capilar y aportando un brillo natural.</p>
+      </div>
+
+      <div class="beneficios-producto">
+        <h3>BENEFICIOS</h3>
+        <ul>
+          <li>Desenreda sin maltratar</li>
+          <li>Masajea y estimula el cuero cabelludo</li>
+          <li>Ideal para cabello liso o con alisado</li>
+          <li>Reduce el frizz</li>
+          <li>Ligero, cómodo y duradero</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de comentarios -->
+  <div id="modalComentarios" class="modal-comentarios">
+    <div class="contenido-modal">
+      <span class="cerrar-modal">&times;</span>
+      <h2 class="titulo-comentarios">COMENTARIOS</h2>
+      
+      <div class="resumen-comentarios">
+        <div class="puntuacion-total">5 OPINIONES<br>4.0</div>
+      </div>
+      
+      <div class="comentario">
+  <div class="encabezado-comentario">
+    <div class="estrellas-comentario">★★★★★</div>
+    <div class="fecha-comentario">2025-05-01</div>
+  </div>
+  <div class="autor-comentario"><strong>Camila</strong></div>
+  <div class="texto-comentario">
+    "¡Me encanta este cepillo! Es súper suave con mi cabello y desenreda sin tirones."
+  </div>
+</div>
+
+<div class="comentario">
+  <div class="encabezado-comentario">
+    <div class="estrellas-comentario">★★★★☆</div>
+    <div class="fecha-comentario">2025-04-28</div>
+  </div>
+  <div class="autor-comentario"><strong>Valentina</strong></div>
+  <div class="texto-comentario">
+    "Muy buen producto. Lo uso todos los días y ha reducido bastante el frizz."
+  </div>
+</div>
+
+<div class="comentario">
+  <div class="encabezado-comentario">
+    <div class="estrellas-comentario">★★★★★</div>
+    <div class="fecha-comentario">2025-04-20</div>
+  </div>
+  <div class="autor-comentario"><strong>Isabella</strong></div>
+  <div class="texto-comentario">
+    "Es liviano, fácil de manejar y deja mi cabello con un brillo hermoso. ¡Recomendado!"
+  </div>
+</div>
+
+<div class="comentario">
+  <div class="encabezado-comentario">
+    <div class="estrellas-comentario">★★★★☆</div>
+    <div class="fecha-comentario">2025-04-15</div>
+  </div>
+  <div class="autor-comentario"><strong>Mariana</strong></div>
+  <div class="texto-comentario">
+    "Muy bonito y funcional. Aunque me gustaría que las cerdas fueran un poco más firmes."
+  </div>
+</div>
+
+<div class="comentario">
+  <div class="encabezado-comentario">
+    <div class="estrellas-comentario">★★★★★</div>
+    <div class="fecha-comentario">2025-04-10</div>
+  </div>
+  <div class="autor-comentario"><strong>Daniela</strong></div>
+  <div class="texto-comentario">
+    "Desde que lo uso, mi rutina de cuidado capilar es más fácil y agradable. ¡Lo volvería a comprar!"
+  </div>
+</div>
+
+      <div class="fuente-comentarios">
+        <p>Reviews por usuarios de NB</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para zoom de imagen
+    const imagenZoom = document.getElementById('imagenZoom');
+    imagenZoom.addEventListener('click', function () {
+      this.classList.toggle('zoomed');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (imagenZoom.classList.contains('zoomed') && !imagenZoom.contains(e.target)) {
+        imagenZoom.classList.remove('zoomed');
+      }
+    });
+
+    // Agregar al carrito
+    document.querySelector('.boton-carrito').addEventListener('click', function () {
+      const producto = {
+        nombre: document.querySelector('.titulo-producto').textContent,
+        precio: document.querySelector('.precio-producto').textContent,
+        imagen: imagenZoom.src
+      };
+
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push(producto);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      alert(`${producto.nombre} fue agregado al carrito`);
+    });
+
+    // Modal comentarios
+    const btnResenas = document.getElementById('btnResenas');
+    const modalComentarios = document.getElementById('modalComentarios');
+    const cerrarModal = document.querySelector('.cerrar-modal');
+
+    btnResenas.addEventListener('click', () => modalComentarios.style.display = 'block');
+    cerrarModal.addEventListener('click', () => modalComentarios.style.display = 'none');
+
+    window.addEventListener('click', function (event) {
+      if (event.target == modalComentarios) {
+        modalComentarios.style.display = 'none';
+      }
+    });
+  </script>
+  <script src="buscador.js"></script>
+</body>
+</html>

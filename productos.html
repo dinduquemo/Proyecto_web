@@ -19,9 +19,9 @@
         <li class="menu-desplegable">
           PRODUCTOS <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
-            <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
-            <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
-            <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
+            <li><a href="productos.html?categoria=shampoo">Shampoo</a></li>
+            <li><a href="productos.html?categoria=acondicionador">Acondicionador</a></li>
+            <li><a href="productos.html?categoria=tratamiento">Tratamiento</a></li>
             <li><a href="kits.html">Kits</a></li>
           </ul>
         </li>
@@ -29,15 +29,15 @@
         <li><a href="blogs.html">BLOG</a></li>
       </ul>
 
-      <!-- Buscador de productos descriptivo y accesible -->
-      <div class="buscador">
-        <form action="productos.html" method="get" role="search" aria-label="Buscador de productos capilares">
-          <label for="busqueda" class="visually-hidden"></label>
-          <input type="text" id="busqueda" name="q" placeholder="Buscar productos" aria-describedby="descripcion-busqueda">
-          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
-          <small id="descripcion-busqueda" class="texto-descriptivo"></small>
-        </form>
-      </div>
+      
+      <!-- Buscador de productos -->
+<div class="buscador">
+  <form id="formulario-busqueda" role="search" aria-label="Buscador de productos capilares">
+    <input type="text" id="busqueda-input" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+    <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
+  </form>
+</div>
+
 
       <!-- Área de usuario y carrito -->
       <div class="acceso-usuario">
@@ -135,12 +135,11 @@
         <option value="todos">Todos los tipos</option>
         <option value="rizado">Para cabello rizado</option>
         <option value="liso">Para cabello liso</option>
-        <option value="ondulado">Para cabello ondulado</option>
       </select>
       
       <select id="filtro-categoria">
         <option value="todos">Todas las categorías</option>
-        <option value="Shampoo">Shampoo</option>
+        <option value="shampoo">Shampoo</option>
         <option value="acondicionador">Acondicionador</option>
         <option value="tratamiento">Tratamiento</option>
         <option value="accesorios">Accesorios</option>
@@ -156,6 +155,7 @@
     </div>
 
     <section class="galeria">
+
         <!-- Cepillo para  cabello liso -->
         <div class="tarjeta" 
              data-tipo="liso" 
@@ -164,10 +164,10 @@
              data-valoracion="4" 
              data-fecha="20230601">
           <div class="badge-stock">En stock</div>
-          <img src="CEPILLO.png" alt="CEPILLO">
+          <img src="CEPILLO.png" alt="Cepillo">
           <div class="valoracion">
             <span class="estrellas">★★★★☆</span>
-            <span class="num-resenas">(24)</span>
+            <span class="num-resenas">(5)</span>
           </div>
           <h2>CEPILLO </h2>
           <p>Desenreda, da brillo y masajea tu cuero cabelludo con cada pasada.</p>
@@ -179,9 +179,9 @@
     </button>
   </div>
 </div>
-      
-        <!-- Kit para cabello rizado -->
-        <div class="tarjeta" 
+
+   <!-- Kit rizos perfectos -->
+          <div class="tarjeta" 
              data-tipo="rizado" 
              data-categoria="combo" 
              data-precio="60000" 
@@ -191,42 +191,91 @@
           <img src="SHAMPOOYACONDICIONADOR.png" alt="Kit rizos perfectos">
           <div class="valoracion">
             <span class="estrellas">★★★★★</span>
-            <span class="num-resenas">(42)</span>
+            <span class="num-resenas">(7)</span>
           </div>
           <h2>KIT RIZOS PERFECTOS</h2>
           <p>¡Dile adiós a los días de cabello rebelde! Kit especial para cabello rizado con shampoo y acondicionador.</p>
           <p class="precio"><strong>$60.000 COP</strong></p>
           <button class="boton agregar-carrito">
             <i class="fas fa-shopping-cart"></i> Agregar al carrito
-          </button>
-          <button class="boton-secundario">Ver detalles</button>
-        </div>
+         <button a href="kit-rizos-perfectos.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
+  </div>
+
+  <!-- Acondicionador para rizos -->
+        <div class="tarjeta" 
+             data-tipo="rizado" 
+             data-categoria="acondicionador" 
+             data-precio="46000" 
+             data-valoracion="5" 
+             data-fecha="20230515">
+          <div class="badge-stock">Últimas unidades</div>
+          <img src="acondicionador.png" alt="acondicionador para rizos">
+          <div class="valoracion">
+            <span class="estrellas">★★★★★</span>
+            <span class="num-resenas">(5)</span>
+          </div>
+          <h2>ACONDICIONADOR PARA RIZOS</h2>
+          <p>Ama tus rizos: suavidad, definición y movimiento natural en cada hebra.</p>
+          <p class="precio"><strong>$46.000 COP</strong></p>
+           <button class="boton agregar-carrito">
+            <i class="fas fa-shopping-cart"></i> Agregar al carrito
+         <button a href="acondicionador-para-rizos.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
+  </div>
+
+  <!-- Acondicionador para LISOS -->
+                <div class="tarjeta" 
+             data-tipo="liso" 
+             data-categoria="acondicionador" 
+             data-precio="46000" 
+             data-valoracion="5" 
+             data-fecha="20230515">
+          <div class="badge-stock">Últimas unidades</div>
+          <img src="acondicionador_liso.png" alt="acondicionador lisos">
+          <div class="valoracion">
+            <span class="estrellas">★★★★★</span>
+            <span class="num-resenas">(15)</span>
+          </div>
+          <h2>ACONDICIONADOR LISOS</h2>
+          <p>Cabello liso, brillante y sin frizz: suavidad que se siente desde el primer uso.</p>
+          <p class="precio"><strong>$46.000 COP</strong></p>
+          <button class="boton agregar-carrito">
+            <i class="fas fa-shopping-cart"></i> Agregar al carrito
+         <button a href="acondicionador-lisos.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
+  </div>
+
         <!-- tratamiento para cabello rizado -->
         <div class="tarjeta" 
              data-tipo="rizado" 
              data-categoria="tratamiento" 
-             data-precio="44000" 
+             data-precio="55000" 
              data-valoracion="3" 
              data-fecha="20230610">
           <div class="badge-stock">En stock</div>
           <img src="Tratamiento.png" alt=" Tratamiento extremo">
           <div class="valoracion">
             <span class="estrellas">★★★☆☆</span>
-            <span class="num-resenas">(20)</span>
+            <span class="num-resenas">(7)</span>
           </div>
           <h2>TRATAMIENTO EXTREMO</h2>
           <p>Resalta la belleza natural de tus rizos con hidratación y definición en cada hebra.</p>
-          <p class="precio"><strong>$44.000 COP</strong></p>
-          <button class="boton agregar-carrito">
+          <p class="precio"><strong>$55.000 COP</strong></p>
+           <button class="boton agregar-carrito">
             <i class="fas fa-shopping-cart"></i> Agregar al carrito
-          </button>
-          <button class="boton-secundario">Ver detalles</button>
-        </div>
+         <button a href="tratamiento-extremo.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
+  </div>
   
         <!-- Shampoo para cabello rizado -->
         <div class="tarjeta" 
              data-tipo="rizado" 
-             data-categoria="Shampoo" 
+             data-categoria="shampoo" 
              data-precio="39000" 
              data-valoracion="3" 
              data-fecha="20230610">
@@ -234,7 +283,7 @@
              <img src="Shampoo.png" alt="SHAMPOO">
              <div class="valoracion">
                <span class="estrellas">★★★★★</span>
-               <span class="num-resenas">(39)</span>
+               <span class="num-resenas">(13)</span>
              </div>
              <h2>SHAMPOO</h2>
              <p>Limpieza suave, rizos definidos: nutre tu cabello desde la raíz </p>
@@ -256,15 +305,16 @@
               <img src="CEPILLO_RIZOS.PNG" alt="CEPILLO PARA RIZOS">
               <div class="valoracion">
                 <span class="estrellas">★★★★★</span>
-                <span class="num-resenas">(35)</span>
+                <span class="num-resenas">(10)</span>
               </div>
               <h2>CEPILLO PARA RIZOS</h2>
               <p>Desenreda con suavidad y cuida tu melena con nuestro cepillo de uso diario.</p>
               <p class="precio"><strong>$20.000 COP</strong></p>
               <button class="boton agregar-carrito">
-                <i class="fas fa-shopping-cart"></i> Agregar al carrito
-              </button>
-              <button class="boton-secundario">Ver detalles</button>
+            <i class="fas fa-shopping-cart"></i> Agregar al carrito
+         <button a href="cepillo-para-rizos.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
             </div>
       
         <!-- Sérum para cabello liso -->
@@ -278,21 +328,22 @@
           <img src="SERUM.png" alt="Sérum liso extremo">
           <div class="valoracion">
             <span class="estrellas">★★★★★</span>
-            <span class="num-resenas">(15)</span>
+            <span class="num-resenas">(14)</span>
           </div>
           <h2>SÉRUM LISO EXTREMO</h2>
           <p>¡Desata la sed de tu cabello! Sérum especial para cabello liso que proporciona brillo y suavidad duradera.</p>
           <p class="precio"><strong>$35.000 COP</strong></p>
           <button class="boton agregar-carrito">
             <i class="fas fa-shopping-cart"></i> Agregar al carrito
-          </button>
-          <button class="boton-secundario">Ver detalles</button>
-        </div>
+         <button a href="Sérum-Liso-Extremo.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
+    </div>
 
         <!-- shampoo para cabello liso -->
         <div class="tarjeta" 
              data-tipo="liso" 
-             data-categoria="Shampoo" 
+             data-categoria="shampoo" 
              data-precio="40000" 
              data-valoracion="3" 
              data-fecha="20230610">
@@ -305,16 +356,17 @@
           <h2>SHAMPOO HIDRATANTE</h2>
           <p>Luce un liso radiante, suave y sin frizz desde la raíz hasta las puntas.</p>
           <p class="precio"><strong>$40.000 COP</strong></p>
-          <button class="boton agregar-carrito">
+            <button class="boton agregar-carrito">
             <i class="fas fa-shopping-cart"></i> Agregar al carrito
-          </button>
-          <button class="boton-secundario">Ver detalles</button>
+         <button a href="Shampoo-hidratante.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
         </div>
 
          <!-- KIT  para cabello liso -->
          <div class="tarjeta" 
          data-tipo="liso" 
-         data-categoria="Combo" 
+         data-categoria="combo" 
          data-precio="70000" 
          data-valoracion="3" 
          data-fecha="20230610">
@@ -322,30 +374,41 @@
       <img src="kit_liso.png" alt="kIT CABELLO LISO">
       <div class="valoracion">
         <span class="estrellas">★★★★★</span>
-        <span class="num-resenas">(19)</span>
+        <span class="num-resenas">(20)</span>
       </div>
       <h2>KIT CABELLO LISO</h2>
       <p>Tu rutina completa para un alisado duradero: limpieza, hidratación y brillo en un solo kit.</p>
       <p class="precio"><strong>$70.000 COP</strong></p>
       <button class="boton agregar-carrito">
-        <i class="fas fa-shopping-cart"></i> Agregar al carrito
-      </button>
-      <button class="boton-secundario">Ver detalles</button>
+            <i class="fas fa-shopping-cart"></i> Agregar al carrito
+         <button a href="Shampoo-hidratante.html" class="boton-secundario ver-detalles" data-id="1">
+      Ver detalles
+    </button>
     </div>
     </section>
   </main>
 
   <!-- Script de filtrado completo -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Configurar eventos para los filtros
-      document.getElementById('filtro-tipo').addEventListener('change', filtrarProductos);
-      document.getElementById('filtro-categoria').addEventListener('change', filtrarProductos);
-      document.getElementById('orden-productos').addEventListener('change', filtrarProductos);
-      
-      // Aplicar filtros iniciales
-      filtrarProductos();
-    });
+   document.addEventListener('DOMContentLoaded', function() {
+  // Configurar eventos para los filtros
+  document.getElementById('filtro-tipo').addEventListener('change', filtrarProductos);
+  document.getElementById('filtro-categoria').addEventListener('change', filtrarProductos);
+  document.getElementById('orden-productos').addEventListener('change', filtrarProductos);
+
+  // Obtener el parámetro de categoría desde la URL
+  const parametrosURL = new URLSearchParams(window.location.search);
+  const categoriaURL = parametrosURL.get('categoria');
+
+  if (categoriaURL) {
+    const filtroCategoria = document.getElementById('filtro-categoria');
+    filtroCategoria.value = categoriaURL.toLowerCase();
+  }
+
+  // Aplicar filtros iniciales
+  filtrarProductos();
+});
+
 
     function filtrarProductos() {
       // Obtener valores seleccionados
@@ -429,33 +492,38 @@
     });
   </script>  
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const filtro = document.getElementById("filtro-categoria");
-      const tarjetas = document.querySelectorAll(".galeria .tarjeta");
-
-      const aplicarFiltro = (categoria) => {
-        tarjetas.forEach(card => {
-          const categoriaTarjeta = card.dataset.categoria.toLowerCase();
-          const mostrar = (categoria === "todos" || categoriaTarjeta === categoria);
-          card.style.display = mostrar ? "block" : "none";
-        });
-      };
-
-      filtro.addEventListener("change", () => {
-        aplicarFiltro(filtro.value.toLowerCase());
-      });
-
-      const params = new URLSearchParams(window.location.search);
-      const categoriaUrl = params.get("categoria");
-      if (categoriaUrl) {
-        filtro.value = categoriaUrl.toLowerCase();
-        aplicarFiltro(categoriaUrl.toLowerCase());
-      } else {
-        aplicarFiltro("todos");
-      }
+<script>
+  // Configurar eventos para los botones "Ver detalles"
+  document.querySelectorAll('.boton-secundario').forEach(boton => {
+    boton.addEventListener('click', function() {
+      const tarjeta = this.closest('.tarjeta');
+      const nombreProducto = tarjeta.querySelector('h2').textContent.trim().toLowerCase().replace(/\s+/g, '-');
+      
+      // Redirigir a la página de detalles del producto
+      window.location.href = `${nombreProducto}.html`;
     });
-  </script>
+  });
+</script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const busqueda = urlParams.get('busqueda');
+  
+  if (busqueda) {
+    document.getElementById('busqueda-input').value = busqueda;
+    const tarjetas = document.querySelectorAll('.tarjeta');
+    
+    tarjetas.forEach(tarjeta => {
+      const nombre = tarjeta.querySelector('h2').textContent.toLowerCase();
+      tarjeta.style.display = nombre.includes(busqueda) ? 'block' : 'none';
+    });
+  }
+});
+</script>
+
+<!-- Al final de TODOS tus .html -->
+<script src="buscador.js"></script>
 </body>
 </html>

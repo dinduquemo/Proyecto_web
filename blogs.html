@@ -26,7 +26,7 @@
           PRODUCTOS <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
             <li><a href="productos.html?categoria=shampoo">Shampoos</a></li>
-            <li><a href="productos.html?categoria=acondicionador">Acondicionadores</a></li>
+            <li><a href="productos.html?categoria=acondicionador">Acondicionador</a></li>
             <li><a href="productos.html?categoria=tratamientos">Tratamientos</a></li>
             <li><a href="kits.html">Kits</a></li>
           </ul>
@@ -37,9 +37,9 @@
 
       <!-- Buscador de productos -->
       <div class="buscador">
-        <form action="productos.html" method="get">
-          <input type="text" name="q" placeholder="Buscar productos..." aria-label="Buscar productos">
-          <button type="submit"><i class="fas fa-search"></i></button>
+        <form id="formulario-busqueda" role="search" aria-label="Buscador de productos capilares">
+          <input type="text" id="busqueda-input" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+          <button type="submit" aria-label="Buscar producto"><i class="fas fa-search"></i></button>
         </form>
       </div>
 
@@ -143,6 +143,31 @@
   <footer>
     <p>&copy; 2025 Natural Beauty | Blog de Cuidado Capilar</p>
   </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const terminoBusqueda = urlParams.get('q');
+
+    if (terminoBusqueda) {
+      const productos = document.querySelectorAll('.tarjeta');
+      const texto = terminoBusqueda.toLowerCase();
+
+      productos.forEach(producto => {
+        const titulo = producto.querySelector('h2')?.textContent.toLowerCase() || '';
+        const descripcion = producto.querySelector('p')?.textContent.toLowerCase() || '';
+
+        if (titulo.includes(texto) || descripcion.includes(texto)) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+
+    }
+  });
+</script>
+<!-- Al final de TODOS tus .html -->
+<script src="buscador.js"></script>
 
 </body>
 </html>
